@@ -88,9 +88,12 @@ http://localhost:9000/#/index-bug-fix
 @ps 还有single布局好像会吃掉主导航的模块, 没有自动合并 @todo
 ```
 
+![](https://luo0412.oss-cn-hangzhou.aliyuncs.com/1656546420814-WSPdHW4TWWQm-image.png)
+
 ![](https://luo0412.oss-cn-hangzhou.aliyuncs.com/1656542157345-i6BfPweKKcpS-image.png)
 
 ![](https://luo0412.oss-cn-hangzhou.aliyuncs.com/1656543233642-yXsY76riECN4-image.png)
+
 
 - `直接文件名带上后缀 @ignore 比 写 meta.enabled: false 方便多了`
 
