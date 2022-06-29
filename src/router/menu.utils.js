@@ -18,6 +18,8 @@ export const convertMenu = (array) => {
 
             if (!editingItem) {
                 debugger
+                console.error("跳过存在首页覆盖问题的路由")
+                return
             }
 			let itemm = editingItem.find(i => i.uid === uniName)
 
@@ -29,6 +31,7 @@ export const convertMenu = (array) => {
 					// path: "/" + key,
 					path: idx < keyList.length - 1 ? null : item.path,
 					children: idx < keyList.length - 1 ? [] : null,
+                    // children: [],
 					// component: idx < keyList.length - 1 ? item.layout : item.component,
 					meta: {
 

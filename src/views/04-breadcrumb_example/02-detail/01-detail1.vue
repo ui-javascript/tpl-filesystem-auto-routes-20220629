@@ -3,7 +3,7 @@
     meta: {
         enabled: true,
         title: "面包屑-详情1",
-        parentTitle: "面包屑",
+        parentTitle: "失效面包屑2",
         parentIcon: "aiming"
     }
 }

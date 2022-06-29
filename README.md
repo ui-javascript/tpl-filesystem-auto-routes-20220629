@@ -33,4 +33,6 @@ parentNode
 </route>
 ```
 
-- index问题
+- index路径覆盖而失效问题
+
+![](https://luo0412.oss-cn-hangzhou.aliyuncs.com/1656542157345-i6BfPweKKcpS-image.png)

@@ -52,7 +52,7 @@ let globalSettings = {
          * head 顶部模式
          * single 侧边栏模式（无主导航）
          */
-        menuMode: 'head',
+        menuMode: 'side',
         // 切换主导航同时跳转页面
         switchMainMenuAndPageJump: true,
         // 次导航只保持一个子项的展开
@@ -65,9 +65,9 @@ let globalSettings = {
         // 是否固定
         fixed: true,
         // 是否开启侧边栏展开收起按钮
-        enableSidebarCollapse: true,
+        enableSidebarCollapse: false,
         // 是否开启面包屑导航
-        enableBreadcrumb: true,
+        enableBreadcrumb: false,
         // 是否开启导航搜索
         enableNavSearch: true,
         // 是否开启全屏
