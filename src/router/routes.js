@@ -101,21 +101,11 @@ let systemRoutes = [
     }
 ]
 
-import MultilevelMenuExample from './modules/multilevel.menu.example'
-import BreadcrumbExample from './modules/breadcrumb.example'
+
 
 // 动态路由（异步路由、导航栏路由）
 let asyncRoutes = [
-    {
-        meta: {
-            title: '演示',
-            icon: 'sidebar-default'
-        },
-        children: [
-            MultilevelMenuExample,
-            BreadcrumbExample
-        ]
-    }
+
 ]
 
 import { setupLayouts } from 'virtual:generated-layouts'
@@ -129,6 +119,27 @@ if (useSettingsStore(pinia).app.routeBaseOn === 'filesystem') {
         return item.meta?.enabled !== false && item.meta?.constant !== true && item.meta?.layout !== false
     }))
 }
+
+
+
+const convertNameAndPath = (routes) => {
+    routes.forEach(item => {
+        if (item.name) {
+            item.name = item.name.replace(/(^\d+-)|-\d+/g, "")
+        }
+        if (item.path) {
+            item.path = item.path.replace(/(^\/\d+-)|\/\d+-/g, "/")
+        }
+
+        if (item.children) {
+            convertNameAndPath(item.children)
+        }
+    })
+}
+
+// convertNameAndPath(constantRoutes)
+// convertNameAndPath(systemRoutes)
+convertNameAndPath(asyncRoutes)
 
 export {
     constantRoutes,

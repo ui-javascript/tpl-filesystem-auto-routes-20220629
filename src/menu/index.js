@@ -5,8 +5,8 @@ import { setupLayouts } from 'virtual:generated-layouts'
 import generatedRoutes from 'virtual:generated-pages'
 
 let routes = []
-generatedRoutes.forEach(v => {
-    routes.push(v?.meta?.layout != false ? setupLayouts([v])[0] : v)
+generatedRoutes.forEach(item => {
+    routes.push((item.meta?.enabled !== false && item.meta?.constant !== true && item.meta?.layout !== false) ? setupLayouts([item])[0] : item)
 })
 console.log('路由: ', routes)
 
@@ -49,5 +49,23 @@ const genMenu = convertMenu(clonedRoutes
     .filter(item => !item || !item.meta || item.meta.enabled !== false)
 
 // console.log('菜单: ', genMenu)
+
+const convertPath = (routes) => {
+    routes.forEach(item => {
+
+        if (item.path) {
+            item.path = item.path.replace(/(^\/\d+-)|\/\d+-/g, "/")
+        }
+
+        if (item.children) {
+            convertPath(item.children)
+        }
+    })
+}
+
+convertPath(genMenu)
+
+console.log("菜单")
+console.log(genMenu)
 
 export default genMenu
