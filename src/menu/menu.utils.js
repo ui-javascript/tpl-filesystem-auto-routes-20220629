@@ -34,7 +34,7 @@ export const convertMenu = (array) => {
 					meta: {
 						...item.meta,
                         title: idx < keyList.length - 1 ? (item.meta.parentTitle || uniName) : (item.meta.title || uniName),
-						icon: idx < keyList.length - 1 ? (item.meta.parentIcon || 'sidebar-menu') : (item.meta.icon || 'sidebar-menu'),
+						icon: idx < keyList.length - 1 ? (item.meta.parentIcon) : (item.meta.icon), // || 'sidebar-menu'
 					}
 				}
 				editingItem.push(itemm)

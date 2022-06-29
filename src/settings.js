@@ -52,11 +52,11 @@ let globalSettings = {
          * head 顶部模式
          * single 侧边栏模式（无主导航）
          */
-        menuMode: 'side',
+        menuMode: 'head',
         // 切换主导航同时跳转页面
         switchMainMenuAndPageJump: false,
         // 次导航只保持一个子项的展开
-        subMenuUniqueOpened: true,
+        subMenuUniqueOpened: false,
         // 次导航是否收起
         subMenuCollapse: false
     },

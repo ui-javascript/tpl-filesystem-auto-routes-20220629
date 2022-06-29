@@ -3,6 +3,7 @@
     meta: {
         title: '导航1',
         parentTitle: "导航",
+        parentIcon: "sidebar-menu"
     }
 }
 </route>

@@ -3,6 +3,7 @@
     meta: {
         title: "修改密码",
         parentTitle: "个人信息",
+        parentIcon: "sidebar-menu"
     }
 }
 </route>
