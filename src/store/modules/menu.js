@@ -130,7 +130,7 @@ const useMenuStore = defineStore(
                     } else {
                         accessedMenus = deepClone(menu)
                     }
-                    this.menus = accessedMenus.filter(item => item.children.length != 0)
+                    this.menus = accessedMenus.filter(item => item.children && item.children.length != 0)
                     resolve()
                 })
             },
@@ -150,7 +150,7 @@ const useMenuStore = defineStore(
                         } else {
                             accessedMenus = deepClone(res.data)
                         }
-                        this.menus = accessedMenus.filter(item => item.children.length != 0)
+                        this.menus = accessedMenus.filter(item => item.children && item.children.length != 0)
                         resolve()
                     })
                 })

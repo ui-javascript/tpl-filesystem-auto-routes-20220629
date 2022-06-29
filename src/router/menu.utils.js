@@ -22,7 +22,6 @@ export const convertMenu = (array) => {
 			let itemm = editingItem.find(i => i.uid === uniName)
 
 			if (itemm == null) {
-
 				itemm = {
 					uid: uniName,
 					// title: uniName,
@@ -32,13 +31,17 @@ export const convertMenu = (array) => {
 					children: idx < keyList.length - 1 ? [] : null,
 					// component: idx < keyList.length - 1 ? item.layout : item.component,
 					meta: {
-						...item.meta,
-                        title: idx < keyList.length - 1 ? (item.meta.parentTitle || uniName) : (item.meta.title || uniName),
-						icon: idx < keyList.length - 1 ? (item.meta.parentIcon) : (item.meta.icon), // || 'sidebar-menu'
+
 					}
 				}
 				editingItem.push(itemm)
 			}
+
+            itemm.meta = {
+                ...item.meta,
+                title: itemm.meta.title ?? (idx < keyList.length - 1 ? item.meta.parentTitle : item.meta.title),
+                icon: itemm.meta.icon ?? (idx < keyList.length - 1 ? item.meta.parentIcon : item.meta.icon), // || 'sidebar-menu'
+            }
 
 			editingItem = itemm.children
 		})

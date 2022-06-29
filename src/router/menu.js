@@ -1,8 +1,36 @@
-import {cloneDeep, sortBy} from "lodash"
+import { cloneDeep, sortBy } from "lodash"
 import { convertMenu } from "./menu.utils"
 
 import { setupLayouts } from 'virtual:generated-layouts'
 import generatedRoutes from 'virtual:generated-pages'
+
+const sortByName = (childList, parentNode) => {
+    if (parentNode == null) {
+        childList = sortBy(childList, (e) => e.uid)
+    } else {
+        parentNode.children = sortBy(childList, (e) => e.uid)
+    }
+
+    childList.forEach(childItem => {
+        if (childItem.children) {
+            sortByName(childItem.children, childItem)
+        }
+    })
+}
+
+const removeMenuPathNumPrefix = (routes) => {
+    routes.forEach(item => {
+
+        if (item.path) {
+            item.path = item.path.replace(/(^\/\d+-)|\/\d+-/g, "/")
+        }
+
+        if (item.children) {
+            removeMenuPathNumPrefix(item.children)
+        }
+    })
+}
+
 
 let routes = []
 generatedRoutes.forEach(item => {
@@ -44,44 +72,19 @@ clonedRoutes.map(route => {
         route.children = []
     }
 })
+
+
 console.log("修正后的路径")
 console.log(clonedRoutes)
+
+
 const genMenu = convertMenu(clonedRoutes
     .filter(item => !["/", "/login", "/reload", "/:all(.*)*"].includes(item.path)))
-    .filter(item => !item || !item.meta || item.meta.enabled !== false)
+    // .filter(item => !item || !item.meta || item.meta.enabled !== false)
 
 // console.log('菜单: ', genMenu)
-
-const sortByName = (childList, parentNode) => {
-    if (parentNode == null) {
-        childList = sortBy(childList, (e) => e.uid)
-    } else {
-        debugger
-        parentNode.children = sortBy(childList, (e) => e.uid)
-    }
-
-    childList.forEach(childItem => {
-        if (childItem.children) {
-            sortByName(childItem.children, childItem)
-        }
-    })
-}
-
-const convertPath = (routes) => {
-    routes.forEach(item => {
-
-        if (item.path) {
-            item.path = item.path.replace(/(^\/\d+-)|\/\d+-/g, "/")
-        }
-
-        if (item.children) {
-            convertPath(item.children)
-        }
-    })
-}
-
 sortByName(genMenu, null)
-convertPath(genMenu)
+removeMenuPathNumPrefix(genMenu)
 
 console.log("菜单")
 console.log(genMenu)
