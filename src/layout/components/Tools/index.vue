@@ -19,7 +19,7 @@ function userCommand(command) {
             break
         case 'setting':
             router.push({
-                name: 'personalSetting'
+                name: 'personal-setting'
             })
             break
         case 'logout':

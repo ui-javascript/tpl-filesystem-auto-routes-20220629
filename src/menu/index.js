@@ -8,15 +8,11 @@ let routes = []
 generatedRoutes.forEach(v => {
     routes.push(v?.meta?.layout != false ? setupLayouts([v])[0] : v)
 })
-
-
-
 console.log('路由: ', routes)
 
 const allRoutesPath = []
 const getAllRoutesPath = (routes) => {
     routes.map(route => {
-
         if (route.children) {
             getAllRoutesPath(route.children)
         }
@@ -38,10 +34,10 @@ clonedRoutes.map(route => {
         route.meta = route.children[0].meta
 
         // 子节点上提
-        if (!allRoutesPath.some(i => i.startsWith(route.path+"/"))) {
-            route.layout = route.component
-            route.component = route.children[0].component
-        }
+        // if (!allRoutesPath.some(i => i.startsWith(route.path+"/"))) {
+        //     route.layout = route.component
+        //     route.component = route.children[0].component
+        // }
 
         route.children = []
     }
@@ -54,66 +50,4 @@ const genMenu = convertMenu(clonedRoutes
 
 // console.log('菜单: ', genMenu)
 
-// console.log(convertMenu(clonedRoutes)[4])
-
-const menu = [
-    // {
-    //     meta: {
-    //         title: '演示',
-    //         icon: 'sidebar-default'
-    //     },
-    //     children: [
-    //         {
-    //             meta: {
-    //                 title: '多级导航',
-    //                 icon: 'sidebar-menu'
-    //             },
-    //             children: [
-    //                 {
-    //                     path: '/multilevel_menu_example/page',
-    //                     meta: {
-    //                         title: '导航1'
-    //                     }
-    //                 },
-    //                 {
-    //                     meta: {
-    //                         title: '导航2'
-    //                     },
-    //                     children: [
-    //                         {
-    //                             path: '/multilevel_menu_example/level2/page',
-    //                             meta: {
-    //                                 title: '导航2-1'
-    //                             }
-    //                         },
-    //                         {
-    //                             meta: {
-    //                                 title: '导航2-2'
-    //                             },
-    //                             children: [
-    //                                 {
-    //                                     path: '/multilevel_menu_example/level2/level3/page1',
-    //                                     meta: {
-    //                                         title: '导航2-2-1'
-    //                                     }
-    //                                 },
-    //                                 {
-    //                                     path: '/multilevel_menu_example/level2/level3/page2',
-    //                                     meta: {
-    //                                         title: '导航2-2-2'
-    //                                     }
-    //                                 }
-    //                             ]
-    //                         }
-    //                     ]
-    //                 }
-    //             ]
-    //         }
-    //     ]
-    // },
-    ...genMenu
-]
-
-console.log(menu)
-
-export default menu
+export default genMenu

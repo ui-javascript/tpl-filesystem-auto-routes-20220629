@@ -1,7 +1,7 @@
 <route>
 {
     meta: {
-        title: "测试1-3",
+        title: "测试2",
         parentTitle: "测试"
     }
 }
@@ -10,6 +10,6 @@
 
 <template>
 <div>
-    测试1-3
+    测试2
 </div>
 </template>
