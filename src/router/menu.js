@@ -1,4 +1,4 @@
-import {cloneDeep} from "lodash"
+import {cloneDeep, sortBy} from "lodash"
 import { convertMenu } from "./menu.utils"
 
 import { setupLayouts } from 'virtual:generated-layouts'
@@ -6,7 +6,9 @@ import generatedRoutes from 'virtual:generated-pages'
 
 let routes = []
 generatedRoutes.forEach(item => {
-    routes.push((item.meta?.enabled !== false && item.meta?.constant !== true && item.meta?.layout !== false) ? setupLayouts([item])[0] : item)
+    if (item.meta?.enabled !== false && item.meta?.constant !== true) {
+        routes.push((item.meta?.layout !== false) ? setupLayouts([item])[0] : item)
+    }
 })
 console.log('路由: ', routes)
 
@@ -50,6 +52,21 @@ const genMenu = convertMenu(clonedRoutes
 
 // console.log('菜单: ', genMenu)
 
+const sortByName = (childList, parentNode) => {
+    if (parentNode == null) {
+        childList = sortBy(childList, (e) => e.uid)
+    } else {
+        debugger
+        parentNode.children = sortBy(childList, (e) => e.uid)
+    }
+
+    childList.forEach(childItem => {
+        if (childItem.children) {
+            sortByName(childItem.children, childItem)
+        }
+    })
+}
+
 const convertPath = (routes) => {
     routes.forEach(item => {
 
@@ -63,6 +80,7 @@ const convertPath = (routes) => {
     })
 }
 
+sortByName(genMenu, null)
 convertPath(genMenu)
 
 console.log("菜单")

@@ -1,6 +1,7 @@
 <route>
 {
     meta: {
+        enabled: false,
         title: "测试2",
         parentTitle: "测试",
         layout: "main",

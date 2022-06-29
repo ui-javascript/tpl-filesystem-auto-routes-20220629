@@ -17,3 +17,4 @@ parentNode
 ```
 
 - 开发中重命名目录, 偶尔会出现路由菜单顺序错乱, 一般重启就能解决
+- 直接文件名带上后缀 `@ignore` 比 meta.enabled: false 方便多了
