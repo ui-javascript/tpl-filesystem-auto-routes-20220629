@@ -19,7 +19,6 @@ const resultList = computed(() => {
     let result = []
     result = sourceList.value.filter(item => {
         let flag = false
-        debugger
         if (item.title.indexOf(searchInput.value) >= 0) {
             flag = true
         }

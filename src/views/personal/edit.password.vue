@@ -1,7 +1,8 @@
 <route>
 {
     meta: {
-        title: "修改密码"
+        title: "修改密码",
+        parentTitle: "个人信息",
     }
 }
 </route>

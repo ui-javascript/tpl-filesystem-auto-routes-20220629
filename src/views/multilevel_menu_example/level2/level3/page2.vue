@@ -1,7 +1,8 @@
 <route>
 {
     meta: {
-        title: '导航2-2-2'
+        title: '导航2-2-2',
+        parentTitle: '导航2-2'
     }
 }
 </route>

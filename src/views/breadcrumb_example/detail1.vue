@@ -1,7 +1,9 @@
 <route>
 {
     meta: {
-        enabled: true
+        enabled: true,
+        title: "面包屑-详情1",
+        parentTitle: "面包屑",
     }
 }
 </route>
@@ -9,7 +11,7 @@
 <template>
     <div>
         <page-main>
-            注意看面包屑导航的变化
+            注意看面包屑导航的变化detail1
         </page-main>
     </div>
 </template>

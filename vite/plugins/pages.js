@@ -5,6 +5,7 @@ export default function createPages() {
         dirs: 'src/views',
         exclude: [
             '**/components/**/*.vue'
-        ]
+        ],
+        // importMode: 'sync',
     })
 }

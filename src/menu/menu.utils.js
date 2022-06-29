@@ -2,32 +2,39 @@
 export const convertMenu = (array) => {
 	const routes = []
 
-	array.map(item => {
+	array.forEach(item => {
 		let editingItem = routes
 
+        // if (item.path === "") {
+        //     item.path = "/index"
+        // }
 		const keyList = item.path.split('/')
 		keyList.shift()
 
 		let uniName = ""
 
-		keyList.map((key, idx) => {
+		keyList.forEach((key, idx) => {
 			uniName += (uniName === "" ? key : "-" + key)
 
+            if (!editingItem) {
+                debugger
+            }
 			let itemm = editingItem.find(i => i.uid === uniName)
 
 			if (itemm == null) {
+
 				itemm = {
 					uid: uniName,
 					// title: uniName,
 					// icon: 'sidebar-menu',
 					// path: "/" + key,
-					path: item.path,
+					path: idx < keyList.length - 1 ? null : item.path,
 					children: idx < keyList.length - 1 ? [] : null,
 					// component: idx < keyList.length - 1 ? item.layout : item.component,
 					meta: {
-						title: uniName,
-						icon: 'sidebar-menu',
 						...item.meta,
+                        title: idx < keyList.length - 1 ? (item.meta.parentTitle || uniName) : (item.meta.title || uniName),
+						icon: idx < keyList.length - 1 ? (item.meta.parentIcon || 'sidebar-menu') : (item.meta.icon || 'sidebar-menu'),
 					}
 				}
 				editingItem.push(itemm)

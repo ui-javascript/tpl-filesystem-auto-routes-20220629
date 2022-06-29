@@ -1,13 +1,14 @@
 <route>
 {
     meta: {
-        enabled: true
+        enabled: true,
+        title: "面包屑-列表1",
     }
 }
 </route>
 
 <template>
     <page-main>
-        <router-link :to="{name: 'breadcrumbExampleDetail2'}">查看详情页</router-link>
+        yyyy
     </page-main>
 </template>
