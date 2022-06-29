@@ -3,7 +3,8 @@
     meta: {
         enabled: true,
         title: "面包屑-详情1",
-
+        parentTitle: "面包屑",
+        parentIcon: "aiming"
     }
 }
 </route>
