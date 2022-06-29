@@ -1,7 +1,7 @@
 <route lang="json5">
 {
     meta: {
-        title: "首页Bug3",
+        title: "首页Bug",
         parentTitle: "首页Bug",
         parentIcon: "sidebar-menu",
         layout: "main",
@@ -13,6 +13,6 @@
 
 <template>
 <div>
-    首页Bug3
+    首页Bug
 </div>
 </template>
