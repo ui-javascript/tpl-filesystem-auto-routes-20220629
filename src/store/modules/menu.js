@@ -1,7 +1,7 @@
 import { deepClone, resolveRoutePath } from '@/util'
 import path from 'path-browserify'
 import api from '@/api'
-import menu from '@/menu'
+import menu from '@/router/menu'
 
 import useSettingsStore from './settings'
 import useUserStore from './user'
@@ -168,7 +168,7 @@ const useMenuStore = defineStore(
                                 if (!data) {
                                     debugger
                                 }
-                                
+
                                 return data.indexOf(r.path + '/') === 0 || data == r.path
                             })
                         ) {

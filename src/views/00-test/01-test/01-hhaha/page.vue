@@ -2,7 +2,8 @@
 {
     meta: {
         title: "测试3-2-1",
-        parentTitle: "测试3-2"
+        parentTitle: "测试3-2",
+        layout: "main",
     }
 }
 </route>

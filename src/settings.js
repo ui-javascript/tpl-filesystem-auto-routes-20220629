@@ -13,11 +13,11 @@ let globalSettings = {
          * 3、鉴权指令：v-auth、v-auth-all
          * 4、鉴权函数：this.$auth()、this.$authAll()
          */
-        enablePermission: false,
+        enablePermission: true,
         // 是否开启载入进度条
         enableProgress: true,
         // 是否开启动态标题
-        enableDynamicTitle: false,
+        enableDynamicTitle: true,
         /**
          * 路由数据来源
          * frontend 前端
@@ -54,7 +54,7 @@ let globalSettings = {
          */
         menuMode: 'head',
         // 切换主导航同时跳转页面
-        switchMainMenuAndPageJump: false,
+        switchMainMenuAndPageJump: true,
         // 次导航只保持一个子项的展开
         subMenuUniqueOpened: false,
         // 次导航是否收起
@@ -65,17 +65,17 @@ let globalSettings = {
         // 是否固定
         fixed: true,
         // 是否开启侧边栏展开收起按钮
-        enableSidebarCollapse: false,
+        enableSidebarCollapse: true,
         // 是否开启面包屑导航
         enableBreadcrumb: true,
         // 是否开启导航搜索
         enableNavSearch: true,
         // 是否开启全屏
-        enableFullscreen: false,
+        enableFullscreen: true,
         // 是否开启页面刷新
-        enablePageReload: false,
+        enablePageReload: true,
         // 是否开启颜色主题
-        enableColorScheme: false,
+        enableColorScheme: true,
         // 是否开启应用配置（建议在生产环境关闭）
         enableAppSetting: false
     },
@@ -85,7 +85,7 @@ let globalSettings = {
         enable: true,
         // 版权信息配置，格式为：Copyright © [dates] <company> <beian>
         dates: '2020-2022',
-        company: 'Fantastic-admin',
+        company: 'admin',
         website: 'https://fantastic-admin.netlify.app',
         beian: ''
     }
