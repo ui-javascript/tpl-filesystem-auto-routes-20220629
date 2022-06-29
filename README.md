@@ -2,6 +2,10 @@
 
 > fantastic-admin 基于文件系统的约定式路由测试
 
+可以一定程度上帮助偷懒, 但还不是特别好用...
+
+![](https://luo0412.oss-cn-hangzhou.aliyuncs.com/1656545992186-ncyRdRfnfwf4-image.png)
+
 # 改进内容
 
 目前fantastic-admin切换成filesystem模式可以不写路由, 但是menu还是需要手写

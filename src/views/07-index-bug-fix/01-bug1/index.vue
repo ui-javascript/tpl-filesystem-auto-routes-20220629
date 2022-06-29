@@ -3,6 +3,8 @@
     meta: {
         title: "首页bug1",
         layout: "main",
+        parentTitle: "首页Bug",
+        parentIcon: "sidebar-menu",
         // auth: ['news.browse', 'news.edit']
     }
 }
