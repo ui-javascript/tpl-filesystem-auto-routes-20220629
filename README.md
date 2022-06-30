@@ -1,10 +1,8 @@
 # README
 
-> fantastic-admin 基于文件系统的约定式路由测试
+> @ps fantastic-admin 文件系统模式下的约定式路由测试
 
 可以一定程度上帮助偷懒, 但还不是特别好用...
-
-![](https://luo0412.oss-cn-hangzhou.aliyuncs.com/1656545992186-ncyRdRfnfwf4-image.png)
 
 # 改进内容
 
@@ -15,6 +13,8 @@
 1. 将路由Routes的扁平结构转换成树结构从而生成菜单Menu, 导航组件 不需要创建, 会自动生成, 其Title和Icon就直接记录在下层可展示内容的 页面子组件 上
 
 2. 在文件名和目录前添加数字前缀, 例如 01-xxx, 用于指定显示时的先后顺序, 但是最终生成的路由和菜单会抹去这些, 不会影响url显示
+
+![](https://luo0412.oss-cn-hangzhou.aliyuncs.com/1656547087939-PyZDp4fHayMy-image.png)
 
 # 问题填坑 @faq
 
