@@ -6,7 +6,7 @@
 
 # 改进内容
 
-目前fantastic-admin切换成filesystem模式可以不写路由, 但是menu还是需要手写
+目前fantastic-admin切换成filesystem模式可以不写路由Routes, 但是菜单Menu还是需要手写
 
 所以简单地修改了两点, 帮助进一步偷懒
 
