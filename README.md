@@ -58,29 +58,23 @@ parentNode
 </route>
 ```
 
-- `index路径覆盖失效问题` @todo
+- `index路径与导航冲突问题` @todo
 
 ```
+index.vue的所在的目录是叶子节点
+下面不能再嵌套目录了
+
+===
 目前的配置规则是:
-导航 不应该创建文件, 它的信息由 页面子组件 记录
+导航 不创建文件, 它的信息由 页面子组件 记录
 
 07-index-bug-fix/01-bug11/index.vue
 07-index-bug-fix/01-bug12/index.vue
 07-index-bug-fix/page.vue
-这三个文件的公共父节点都是07-index-bug-fix
+这三个文件的公共父导航都是 07-index-bug-fix
 
-而07-index-bug-fix
-== 07-index-bug-fix/index.vue
-== 07-index-bug-fix/index/index.vue  
-
-这个父节点是 导航, 所以不该创建这个文件
-
-===
-@ps 只保留一个index.vue理论上也是可以的
-但是目前fantastic的布局组件不支持
-
-不过输入url还是可以显示的
-http://localhost:9000/#/index-bug-fix
+而07-index-bug-fix/index.vue == 07-index-bug-fix/index/index.vue 转换成路由后
+会和导航 07-index-bug-fix 冲突, 所以不该创建07-index-bug-fix/index.vue
 
 ===
 @ps single布局好像会吃掉主导航的模块, 没有自动合并 @todo
@@ -91,14 +85,14 @@ http://localhost:9000/#/index-bug-fix
 
 ![](https://luo0412.oss-cn-hangzhou.aliyuncs.com/1656543233642-yXsY76riECN4-image.png)
 
-- 多层导航嵌套问题 @todo
+- `多层嵌套导航无法指定导航名称问题` @todo
 
 ```
-要保证index.vue的所在的目录就是子节点
+想指定每一层的导航名称就要保证每一层导航下就有一个可点击的 页面子组件
+反映到文件夹结构 就是展开每一层都有至少一个 xxx.vue(index.vue是叶子节点, 不能再嵌套了)
 
 ===
 页面子组件 包括内容+布局两部分, 代码中有个提升内容和布局的粗暴处理
-所以遇上那种很多层的嵌套导航会jj...
 
 @ps 还好大多场景不用考虑这种情况
 ```
