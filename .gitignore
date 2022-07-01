@@ -8,4 +8,4 @@ public/icons
 src/assets/sprites/*.*
 !src/assets/sprites/.gitkeep
 
-.gitpod.yml
+# .gitpod.yml
