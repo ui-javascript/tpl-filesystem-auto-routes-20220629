@@ -65,7 +65,7 @@ let globalSettings = {
         // 是否固定
         fixed: true,
         // 是否开启侧边栏展开收起按钮
-        enableSidebarCollapse: false,
+        enableSidebarCollapse: true,
         // 是否开启面包屑导航
         enableBreadcrumb: false,
         // 是否开启导航搜索

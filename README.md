@@ -64,9 +64,6 @@ parentNode
 目前的配置规则是:
 导航 不应该创建文件, 它的信息由 页面子组件 记录
 
-==> 页面子组件 包括内容+布局两部分, 代码处理中有个提升布局的骚操作, 目前处理地比较粗暴
-所以遇上很多层的嵌套导航会jj...
-
 07-index-bug-fix/01-bug11/index.vue
 07-index-bug-fix/01-bug12/index.vue
 07-index-bug-fix/page.vue
@@ -89,15 +86,31 @@ http://localhost:9000/#/index-bug-fix
 @ps single布局好像会吃掉主导航的模块, 没有自动合并 @todo
 ```
 
-![](https://luo0412.oss-cn-hangzhou.aliyuncs.com/1656546420814-WSPdHW4TWWQm-image.png)
 
 ![](https://luo0412.oss-cn-hangzhou.aliyuncs.com/1656542157345-i6BfPweKKcpS-image.png)
 
 ![](https://luo0412.oss-cn-hangzhou.aliyuncs.com/1656543233642-yXsY76riECN4-image.png)
 
+- 多层导航嵌套问题 @todo
+
+```
+页面子组件 包括内容+布局两部分, 代码处理中有个提升布局的骚操作, 目前处理地比较粗暴
+所以遇上很多层的嵌套导航会jj...
+
+不过大多场景不用考虑这种复杂的
+
+===
+这种情况不得不写一个 nav.vue
+里面就写一个 router-view
+```
+
+![](https://luo0412.oss-cn-hangzhou.aliyuncs.com/1656546420814-WSPdHW4TWWQm-image.png)
 
 - `直接文件名带上后缀 @ignore 比 写 meta.enabled: false 方便多了`
 
 ---
 
 # 参考 @ref
+
+- fantastic-admin
+- vite-plugin-pages
