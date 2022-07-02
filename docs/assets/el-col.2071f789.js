@@ -1,0 +1,12 @@
+
+/**
+ * 由 Fantastic-admin 提供技术支持
+ * Powered by Fantastic-admin
+ * https://fantastic-admin.netlify.app
+ * 代码仓库
+ * Gitee  https://gitee.com/hooray/fantastic-admin
+ * Github https://github.com/hooray/fantastic-admin
+ */
+    
+import{R as e,U as t,d as s,O as a,c as u,y as l,ad as r,aG as p,t as n,j as o,l as c,C as f,n as d,h as m,i,v as b,E as g,I as y,r as h}from"./index.015bb7ab.js";import{m as $}from"./typescript2.b7eef2c1.js";const j=Symbol("rowContextKey");const v=y(g(s({name:"ElCol",props:e({tag:{type:String,default:"div"},span:{type:Number,default:24},offset:{type:Number,default:0},pull:{type:Number,default:0},push:{type:Number,default:0},xs:{type:t([Number,Object]),default:()=>$({})},sm:{type:t([Number,Object]),default:()=>$({})},md:{type:t([Number,Object]),default:()=>$({})},lg:{type:t([Number,Object]),default:()=>$({})},xl:{type:t([Number,Object]),default:()=>$({})}}),setup(e){const t=e,{gutter:s}=a(j,{gutter:u((()=>0))}),g=l("col"),y=u((()=>{const e={};return s.value&&(e.paddingLeft=e.paddingRight=s.value/2+"px"),e})),h=u((()=>{const e=[];["span","offset","pull","push"].forEach((s=>{const a=t[s];r(a)&&("span"===s?e.push(g.b(`${t[s]}`)):a>0&&e.push(g.b(`${s}-${t[s]}`)))}));return["xs","sm","md","lg","xl"].forEach((s=>{r(t[s])?e.push(g.b(`${s}-${t[s]}`)):p(t[s])&&Object.entries(t[s]).forEach((([t,a])=>{e.push("span"!==t?g.b(`${s}-${t}-${a}`):g.b(`${s}-${a}`))}))})),s.value&&e.push(g.is("guttered")),e}));return(e,t)=>(n(),o(b(e.tag),{class:d([m(g).b(),m(h)]),style:i(m(y))},{default:c((()=>[f(e.$slots,"default")])),_:3},8,["class","style"]))}}),[["__file","/home/runner/work/element-plus/element-plus/packages/components/col/src/col.vue"]]));const N=y(g(s({name:"ElRow",props:e({tag:{type:String,default:"div"},gutter:{type:Number,default:0},justify:{type:String,values:["start","center","end","space-around","space-between","space-evenly"],default:"start"},align:{type:String,values:["top","middle","bottom"],default:"top"}}),setup(e){const t=e,s=l("row"),a=u((()=>t.gutter));h(j,{gutter:a});const r=u((()=>{const e={};return t.gutter?(e.marginRight=e.marginLeft=`-${t.gutter/2}px`,e):e}));return(e,a)=>(n(),o(b(e.tag),{class:d([m(s).b(),m(s).is(`justify-${t.justify}`,"start"!==e.justify),m(s).is(`align-${t.align}`,"top"!==e.align)]),style:i(m(r))},{default:c((()=>[f(e.$slots,"default")])),_:3},8,["class","style"]))}}),[["__file","/home/runner/work/element-plus/element-plus/packages/components/row/src/row.vue"]]));export{v as E,N as a};
+//# sourceMappingURL=el-col.2071f789.js.map

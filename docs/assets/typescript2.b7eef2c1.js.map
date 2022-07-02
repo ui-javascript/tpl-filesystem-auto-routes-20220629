@@ -1,0 +1,1 @@
+{"version":3,"file":"typescript2.b7eef2c1.js","sources":["../../node_modules/element-plus/es/utils/typescript2.mjs"],"sourcesContent":["const mutable = (val) => val;\n\nexport { mutable };\n//# sourceMappingURL=typescript2.mjs.map\n"],"names":["mutable","val"],"mappings":"AAAK,MAACA,EAAWC,GAAQA"}
